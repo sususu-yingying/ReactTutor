@@ -1,30 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import EventDemo from "./button-events/EventDemo";
-import { simpleAction } from "./redux/actions/simpleAction";
 import Nav from "./components/Nav";
 import "./App.css";
-import Post from './components/Post';
-import SideBar from './components/SideBar';
+import MainPanel from './components/MainPanel'
+import LoginPanel from './components/LoginPanel';
+
 
 function App({ classes}) {
+  const isLoggedIn = false;
   return (
     <div className="App">
       <Nav />
       <div className={classes.layoutContainer}>
-        <Grid container spacing={32}>
-          <Grid item sm={12} md={8}>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-          </Grid>
-          <Grid item md={4} className={classes.sideBar}>
-            <SideBar />
-          </Grid>
-        </Grid>
+        {isLoggedIn && <MainPanel />}
+        {!isLoggedIn && <LoginPanel />}
       </div>
     </div>
   );
@@ -41,16 +31,6 @@ const styles = theme => ({
     },
     position: 'relative',
   },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  sideBar: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
-  }
 });
 
 export default withStyles(styles)(App);
