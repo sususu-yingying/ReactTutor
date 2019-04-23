@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Post from './Post';
 import SideBar from './SideBar';
 
-function MainPanel({ classes }) {
+function FeedPanel({ classes }) {
   return (
     <Grid container spacing={32}>
       <Grid item sm={12} md={8}>
@@ -28,4 +28,4 @@ const styles= theme => ({
   }
 });
 
-export default withStyles(styles)(MainPanel);
+export default withStyles(styles)(FeedPanel);

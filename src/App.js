@@ -3,18 +3,19 @@ import { connect } from "react-redux";
 import { withStyles } from '@material-ui/core/styles';
 import Nav from "./components/Nav";
 import "./App.css";
-import MainPanel from './components/MainPanel'
+import FeedPanel from './components/FeedPanel'
 import LoginPanel from './components/LoginPanel';
+import ProfilePanel from './components/ProfilePanel';
 
 
 function App({ classes}) {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
+  const isUserProfile = true;
   return (
     <div className="App">
       <Nav />
       <div className={classes.layoutContainer}>
-        {isLoggedIn && <MainPanel />}
-        {!isLoggedIn && <LoginPanel />}
+        {isUserProfile && <ProfilePanel />}
       </div>
     </div>
   );
