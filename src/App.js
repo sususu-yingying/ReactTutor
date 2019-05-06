@@ -6,6 +6,7 @@ import "./App.css";
 import FeedPanel from './components/FeedPanel'
 import LoginPanel from './components/LoginPanel';
 import ProfilePanel from './components/ProfilePanel';
+import SinglePostPanel from './components/SinglePostPanel';
 
 
 function App({ classes}) {
@@ -15,7 +16,7 @@ function App({ classes}) {
     <div className="App">
       <Nav />
       <div className={classes.layoutContainer}>
-        {isUserProfile && <ProfilePanel />}
+        <SinglePostPanel />
       </div>
     </div>
   );
